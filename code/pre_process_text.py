@@ -10,10 +10,6 @@ import nltk
 from bs4 import BeautifulSoup
 
 
-
-replace_symbols = re.compile('[/(){}\[\]\|@,;]')    
-punc_re = re.compile('[%s]' % re.escape(string.punctuation))
-
 def clean_text(text):
     
     """
@@ -24,16 +20,16 @@ def clean_text(text):
     """
         
         
-    text=BeautifulSoup(text,"lxml").text
-    text = text.lower()
-    text = text.strip()
-    text = re.sub(r' +', ' ', text)
-    text = replace_symbols.sub(' ', text)                   # replace replace_symbols by space in text
+    text=BeautifulSoup(text,"lxml").text                      #remove html tags
+    text = text.lower()                                       #lowercase the etst  
+    text = text.strip()                                       #remove trailing spaces
+    text = re.sub(r' +', ' ', text)                           # replace replace_symbols by space in text
+    text=re.sub(r"[/(){}\[\]\|@,;]",' ',text)                 # replace replace_symbols by space in text
     text = re.sub(r"[-()\"#/@;:{}`+=~|.!?,']", "", text)      #Replacing special character with none
     text = re.sub(r'[0-9]+', '', text)                        #Replacing numbers with none
-    text=" ".join(text.translate(str.maketrans('', '', string.punctuation)) for text in text.split() if text.isalpha())
-    text=punc_re.sub(' ', text)  
     
+    #remove puntutation
+    text=" ".join(text.translate(str.maketrans('', '', string.punctuation)) for text in text.split() if text.isalpha())
     return(text)
 
 

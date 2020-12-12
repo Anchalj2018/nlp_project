@@ -16,14 +16,17 @@ from keras.preprocessing.sequence import pad_sequences
 
 
 """
-Purpose: This script reads in data as csv file from command line to make predictions and saves prediction results as csv files
-         It generates 2 sets of predictions using 2 pre-fitted models, logistic Regression and LSTM model.
+Purpose: This script reads in data as csv file from command line to make predictions and saves prediction results as csv files.
+         It generates 2 sets of predictions using 2 pre-fitted models, Logistic Regression and LSTM model.
          
-Outputs: script outputs 2 csv files , 1 for each model predictions. 
-         csv file consists of 2 columns,one for id and  second for predicted rating.
-         files are stored in  nlp_project/results/prediction folder.
+Outputs: 1. Script outputs 2 csv files , 1 for each model predictions. csv file consists of 2 columns,one for id and  second            for predicted rating. Files are stored in  nlp_project/results/prediction folder.
+
+         2.If the file contains sentiment ratings , script will also generate 2 more csv files for classification reports 
+         (for both models)for analysing the performance of models. Classification report csv files will be stored in  
+         nlp_project/results/eval_report/ folder.
          
-Usage:   python nlp_project/code/predict_data.py <predicition_file.csv>   ( relative to root  folder)
+                
+Usage:   python nlp_project/code/inference.py <predicition_file.csv>   ( relative to root  folder)
 
 <predicition.csv>        The input file for which prediction to be made e.g. sentiment_dataset_test.csv
 
@@ -43,7 +46,7 @@ def eval_model(df, model_name):
         Parmaters: df: input dataframe
                   model_name : text string for the model name
 
-        output: csv file for test classification is saved tonlp_project/results/eval_report  
+        output: csv files for test classification is saved to nlp_project/results/eval_report  
 
     """
         
@@ -85,7 +88,7 @@ def main(prediction_file):
 
 
     
-#*****************************************  Logistic Regression MODEL ********************************************************
+    #*********************************** Logistic Regression MODEL ********************************************************
 
     #preprocess the review text to TF-IDF vectors
     test_lg['clean_review']=pt.pre_process(test_lg['clean_review'])
@@ -103,7 +106,7 @@ def main(prediction_file):
 
     
 
-#******************************************** LSTM MODEL *******************************************************************
+    #******************************************************** LSTM MODEL **************************************************
 
     #load the parameters for text pre-processing
     with open("nlp_project/results/model_param/tokenizer_data_final.pkl", 'rb') as f:
@@ -132,7 +135,7 @@ def main(prediction_file):
     
 
 
-#******************************************EVALUATE THE MODEL IF RATING IS AVAILABLE **************************************
+    #************************************EVALUATE THE MODEL IF RATING IS AVAILABLE **************************************
     
     ## if the input prediction file has sentiment rating available, then we can  generate the classification report
     if 'rating' in test:
