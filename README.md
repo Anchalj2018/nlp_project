@@ -79,7 +79,7 @@ It ouputs the following files:
 
 ### 3.  To train the LSTM model and understand the results 
 
-1. Navigate to jupter notebook in `nlp_project/code/`  folder
+1. Navigate to jupyter notebook in `nlp_project/code/`  folder
 2. Execute `LSTM_selected_final.ipynb` notebook to understand the results
 
 It outputs the following files:
@@ -103,20 +103,21 @@ Logitic regression model with different parameters was investigated for accuracy
 ![Alt text](readme_images/logistic_results.png?raw=true )
 
 * From above 3 results, logistic regression model with n gram range  (1,1),C=1  give more generalized results.  
-* Model witn ngram range(1,1), C=5 captures more variance from the  train data  but it seems to be bit overfitting as there is no improvement in the Dev accuracy result
+* Model witn ngram range(1,1), C=5 captures more variance from the  train data  but it seems to be bit overfitting as there is no improvement in the Dev accuracy result.
 
 
 
 ### LSTM model
 
-LSTM model was trained for 5 epochs  in two different variation for network parameters.
+LSTM model was trained for 5 epochs for two different variation of network parameters. 
+In each case, during training of the model, weights for the best performing models were only saved.
 
 Result
 
 ![Alt text](readme_images/lstm_results.png?raw=true )
 
 Result 1 is from `LSTM_initial_trial.ipynb` and result 2 is from `LSTM_selected_final.ipynb` jupyter notebook respectively.
-
+* WE obtained similar results for both variations in LSTM model. Result 2 is slightly less overfiiting.
 
 LSTM selected_model accuarcy
 
@@ -126,7 +127,7 @@ LSTM  initial model accuarcy
 
 ![Alt text](results/eval_report/lstm_accuracy_initial.png?raw=true )
 
-* WE obtained similar results for both variations in LSTM model. Result 2 is slightly less overfiiting.
+
 
 The model can be further tuned with 
 1. more data
