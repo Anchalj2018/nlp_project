@@ -135,7 +135,7 @@ The model can be further tuned with
 3. variation in architectute
 
 
-### Comparison of two models
+### Comparison of LSTM and Logistic regression models
 
 We observe that both model performed approximately in similar fashion. Logistic regression model scored slighter higher for Dev  dataset accuracy results
 
