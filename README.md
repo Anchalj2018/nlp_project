@@ -109,6 +109,7 @@ Note: you can also see `LSTM_initial_trial.ipynb` in same directory. it is the s
 Logistic Regression model with different parameters was investigated for accuracy on classification. Results are:-
 
 ![Alt text](readme_images/logistic_results.png?raw=true )
+
 (results are compiled from `Baseline_model.ipynb` jupyter notebook)
 
 * In above table, C is knowns as inverse of regularization strength.
@@ -129,7 +130,7 @@ In each case, during training of the model, weights for the best performing mode
 
 * We obtained similar results for both variations in LSTM model. Result 2 is slightly less overfitting.
 
-LSTM selected_model accuarcy
+LSTM selected model accuracy
 
 ![Alt text](results/eval_report/lstm_accuracy_final.png?raw=true )
 
