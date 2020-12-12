@@ -16,11 +16,11 @@ Project Organization
     │   ├── data                <- Original .csv files
     │   ├── code                <- jupyter notebooks and .py scripts for modeling and preprocessing tasks
     │   ├── Results             <- Results related to modeling and preprocessing
-    │   │   ├── eval_report     <- classification report and figures
-    │   │   └── model_param     <- model files and other intermediate results
+    │   │   ├── eval_report     <- Classification report and figures
+    │   │   └── model_param     <- Model files and other intermediate results
     │   │   └── prediction      <- csv iles of predictions for dev and test datasets  
-    │   ├── readme_images       <- images for readme file
-    │   ├── README.md           <-  README for this project.
+    │   ├── readme_images       <- Images for readme file
+    │   ├── README.md           <- README for this project.
 
 --------
 
@@ -40,21 +40,21 @@ matplotlib
 seaborn
 ```
 
-## Execution instructions
+## Execution Instructions
 
 ### 1. Clone this repository 
 ```
 git clone https://github.com/Anchalj2018/nlp_project.git
 ```
 
-### 2. To generate predictions using pre-trained  lositic regressoion-multinomial and LSTM models
+### 2. To generate predictions using pre-trained  Lositic Regressoion-multinomial and LSTM models
 
 Run following command from root.
 
 ```
 python nlp_project/code/inference.py <predicition_file.csv>  
 ```
-- `<predicition_file.csv> ` is the name of file on which predictions are to be made. The file is stored in `nlp_projecr/data/ folder`.
+- `<predicition_file.csv> ` is the name of file on which predictions are to be made. The file is stored in `nlp_projecr/data/` folder.
 
 For example:
 ```
@@ -64,17 +64,17 @@ It creates the following csv files:
 - `nlp_project/results/prediction/logistic_test_prediction.csv`
 - `nlp_project/results/prediction/lstm_test_prediction.csv`
 
-Note: the script also generate classification reports  for the models if the input prediction file has sentiment rating
-- `nlp_project/results/eval_report/logistic__test_classific_report.csv`
-- `nlp_project/results/eval_report/lstm__test_classific_report.csv`
+Note: the script also generates following classification reports  for the models if the input prediction file has sentiment rating
+- `nlp_project/results/eval_report/logistic_test_classific_report.csv`
+- `nlp_project/results/eval_report/lstm_test_classific_report.csv`
 
 
-### 3.  To train the logistic regression model and understand the results 
+### 3.  To train the Logistic Regression model and understand the results 
 
 1. Navigate to jupter notebook in `nlp_project/code/`  folder
 2. execute `Baseline_model.ipynb` notebook to understand the results
 
-It ouputs the following files:
+It creates the following files:
 - `nlp_project/results/prediction/logistic_dev_prediction_final.csv`
 - `nlp_project/results/eval_report/lg_train_classific_report_final.csv`
 - `nlp_project/results/eval_report/lg_dev_classific_report_final.csv`
@@ -86,7 +86,7 @@ It ouputs the following files:
 1. Navigate to jupyter notebook in `nlp_project/code/`  folder
 2. Execute `LSTM_selected_final.ipynb` notebook to understand the results
 
-It outputs the following files:
+It creates the following files:
 - `nlp_project/results/results/model_param/tokenizer_data_final.pkl`
 - `nlp_project/results/results/model_param/lstm_weights_best_final.h5`
 - `nlp_project/results/prediction/lstm_dev_prediction_final.csv`
@@ -95,17 +95,18 @@ It outputs the following files:
 - `nlp_project/results/model_param/lstm_model_final.h5`
 - `nlp_project/results/results/eval_report/lstm_accuracy_final.png`
 
-Note: you can also check `LSTM_initial_trial.ipynb`  which is same model with different parameters to understand the results
+Note: you can also see `LSTM_initial_trial.ipynb`  which is same model with different parameters to understand the variation in results.
 
 
 ## Results
 
-### Logistic Regression- multinomial
+### Logistic Regression- Multinomial
 
 Logitic regression model with different parameters was investigated for accuracy on classification.Results are
 
 ![Alt text](readme_images/logistic_results.png?raw=true )
 
+* In above table C is knowns as inverse of regularization strength.
 * From above 3 results, logistic regression model with n gram range  (1,1),C=1  give more generalized results.  
 * Model witn ngram range(1,1), C=5 captures more variance from the  train data  but it seems to be bit overfitting as there is no improvement in the Dev accuracy result.
 
@@ -121,7 +122,7 @@ Result
 ![Alt text](readme_images/lstm_results.png?raw=true )
 
 Result 1 is from `LSTM_initial_trial.ipynb` and result 2 is from `LSTM_selected_final.ipynb` jupyter notebook respectively.
-* WE obtained similar results for both variations in LSTM model. Result 2 is slightly less overfiiting.
+* WE obtained similar results for both variations in LSTM model. Result 2 is slightly less overfitting.
 
 LSTM selected_model accuarcy
 
@@ -134,14 +135,14 @@ LSTM  initial model accuarcy
 
 
 The model can be further tuned with 
-1. more data
-2. increasing number of epoch for traiing
-3. variation in architectute
+1. Training with more data
+2. Increasing number of epoch for traiing
+3. Variation in architectute
 
 
-### Comparison of LSTM and Logistic regression models
+### Comparison of LSTM and Logistic Regression models
 
-We observe that both model performed approximately in similar fashion. Logistic regression model scored slighter higher for Dev  dataset accuracy results
+We observe that both models performed approximately in similar fashion. Logistic regression model scored slighter higher for Dev  dataset accuracy results.
 
 
 
