@@ -148,6 +148,8 @@ The model can be further tuned with
 
 ### Comparison of LSTM and Logistic Regression models
 
+![Alt text](readme_images/selected_results.png?raw=true )
+
 We observe that both models performed approximately in similar fashion. Logistic Regression model scored slightly higher for Dev  dataset accuracy results. However, there is scope for improvement in LSTM model by training with more data and iterations.
 
 

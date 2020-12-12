@@ -19,7 +19,9 @@ from keras.preprocessing.sequence import pad_sequences
 Purpose: This script reads in data as csv file from command line to make predictions and saves prediction results as csv files.
          It generates 2 sets of predictions using 2 pre-fitted models, Logistic Regression and LSTM model.
          
-Outputs: 1. Script outputs 2 csv files , 1 for each model predictions. csv file consists of 2 columns,one for id and  second            for predicted rating. Files are stored in  nlp_project/results/prediction folder.
+Outputs: 1. Script outputs 2 csv files , 1 for each model predictions.
+        csv file consists of 2 columns,one for id and  second for predicted rating.
+        Files are stored in  nlp_project/results/prediction folder.
 
          2.If the file contains sentiment ratings , script will also generate 2 more csv files for classification reports 
          (for both models)for analysing the performance of models. Classification report csv files will be stored in  
