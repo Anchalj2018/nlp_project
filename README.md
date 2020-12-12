@@ -43,7 +43,7 @@ seaborn
 
 ### 1. Clone this repository 
 ```
-git clone https://csil-git1.cs.surrey.sfu.ca/akalliha/stock-portfolio-management.git
+git clone https://github.com/Anchalj2018/nlp_project.git
 ```
 
 ### 2. To generate predictions using pre-trained  lositic regressoion-multinomial and LSTM models
@@ -60,8 +60,8 @@ For example:
 python nlp_project/code/inference.py sentiment_dataset_test.csv
 ```
 It creates the following csv files:
-- `nlp_project/results/prediction/logistic_test_prediction.csv`
-- `nlp_project/results/prediction/lstm_test_prediction.csv`
+    - `nlp_project/results/prediction/logistic_test_prediction.csv`
+    - `nlp_project/results/prediction/lstm_test_prediction.csv`
 
 
 ### 3.  To train the logistic regression model and understand the results 
@@ -70,27 +70,27 @@ It creates the following csv files:
 2. execute `Baseline_model.ipynb` notebook to understand the results
 
 It ouputs the following files:
-- `nlp_project/results/prediction/logistic_dev_prediction_final.csv`
-- `nlp_project/results/eval_report/lg_train_classific_report_final.csv`
-- `nlp_project/results/eval_report/lg_dev_classific_report_final.csv`
-- `nlp_project/results/model_param/logistic_model_final.sav
+    - `nlp_project/results/prediction/logistic_dev_prediction_final.csv`
+    - `nlp_project/results/eval_report/lg_train_classific_report_final.csv`
+    - `nlp_project/results/eval_report/lg_dev_classific_report_final.csv`
+    - `nlp_project/results/model_param/logistic_model_final.sav
 
 
 ### 3.  To train the LSTM model and understand the results 
 
 1. Navigate to jupter notebook in `nlp_project/code/`  folder
-2. execute `LSTM_selected_final.ipynb` notebook to understand the results
+2. Execute `LSTM_selected_final.ipynb` notebook to understand the results
 
 It outputs the following files:
-- `nlp_project/results/results/model_param/tokenizer_data_final.pkl`
-- `nlp_project/results/results/model_param/lstm_weights_best_final.h5`
-- `nlp_project/results/prediction/lstm_dev_prediction_final.csv`
-- `nlp_project/results/eval_report/lstm_train_classific_report_final.csv`
-- `nlp_project/results/eval_report/lstm_dev_classific_report_final.csv`
-- `nlp_project/results/model_param/lstm_model_final.h5`
-- `nlp_project/results/results/eval_report/lstm_accuracy_final.png`
+    - `nlp_project/results/results/model_param/tokenizer_data_final.pkl`
+    - `nlp_project/results/results/model_param/lstm_weights_best_final.h5`
+    - `nlp_project/results/prediction/lstm_dev_prediction_final.csv`
+    - `nlp_project/results/eval_report/lstm_train_classific_report_final.csv`
+    - `nlp_project/results/eval_report/lstm_dev_classific_report_final.csv`
+    - `nlp_project/results/model_param/lstm_model_final.h5`
+    - `nlp_project/results/results/eval_report/lstm_accuracy_final.png`
 
-Note: you can also check `LSTM_initial_trial`  which is same model with different parameters to understand the results
+Note: you can also check `LSTM_initial_trial.ipynb`  which is same model with different parameters to understand the results
 
 
 ## Results
@@ -99,7 +99,7 @@ Note: you can also check `LSTM_initial_trial`  which is same model with differen
 
 Logitic regression model with different parameters was investigated for accuracy on classification.Results are
 
-![Alt text](results/eval_report/logistic_results.jpg?raw=true )
+![Alt text](results/eval_report/logistic_results.png?raw=true )
 
 * From above 3 results, logistic regression model with n gram range  (1,1),C=1  give more generalized results.  
 * Model witn ngram range(1,1), C=5 captures more variance from the  train data  but it seems to be bit overfitting as there is no improvement in the Dev accuracy result
@@ -112,14 +112,13 @@ LSTM model was trained for 5 epochs  in two different variation for network para
 
 Result
 
-![Alt text](results/readme_images/lstm_results.jpg?raw=true )
+![Alt text](results/readme_images/lstm_results.png?raw=true )
 
+![Alt text](results/eval_report/lstm_accuracy_final.png?raw=true "LSTM selected_model accuarcy")
 
-Lstm_selected_model accuarcy
-![Alt text](results/eval_report/lstm_accuracy_final.png?raw=true )
+![Alt text](results/eval_report/lstm_accuracy_initial.png?raw=true "LSTM  initial model accuarcy")
 
-Lstm_initial model accuarcy
-![Alt text](results/eval_report/lstm_accuracy_initial.png?raw=true)
+* WE obtained similar results for both variations in LSTM model. Result 2 is slightly less overfiiting.
 
 The model can be further tuned with 
 1. more data
