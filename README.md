@@ -64,6 +64,10 @@ It creates the following csv files:
 - `nlp_project/results/prediction/logistic_test_prediction.csv`
 - `nlp_project/results/prediction/lstm_test_prediction.csv`
 
+Note: the script also generate classification reports  for the models if the input prediction file has sentiment rating
+- `nlp_project/results/eval_report/logistic__test_classific_report.csv`
+- `nlp_project/results/eval_report/lstm__test_classific_report.csv`
+
 
 ### 3.  To train the logistic regression model and understand the results 
 
@@ -77,7 +81,7 @@ It ouputs the following files:
 - `nlp_project/results/model_param/logistic_model_final.sav`
 
 
-### 3.  To train the LSTM model and understand the results 
+### 4.  To train the LSTM model and understand the results 
 
 1. Navigate to jupyter notebook in `nlp_project/code/`  folder
 2. Execute `LSTM_selected_final.ipynb` notebook to understand the results
